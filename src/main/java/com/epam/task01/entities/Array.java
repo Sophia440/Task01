@@ -8,6 +8,10 @@ public class Array {
 
     private final List<Integer> elements;
 
+    public Array() {
+        this.elements = new ArrayList<Integer>();
+    }
+
     public Array(Integer... elements) {
         this.elements = new ArrayList<Integer>();
         this.elements.addAll(Arrays.asList(elements));
