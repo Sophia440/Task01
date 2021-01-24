@@ -1,8 +1,6 @@
 package com.epam.task01.entities;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Array {
 
@@ -25,4 +23,21 @@ public class Array {
         return elements;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Array array = (Array) o;
+        List<Integer> arrayElements = array.getElements();
+        return elements.equals(arrayElements);
+    }
+
+    @Override
+    public int hashCode() {
+        return elements.hashCode();
+    }
 }

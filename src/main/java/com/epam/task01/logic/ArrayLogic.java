@@ -2,6 +2,8 @@ package com.epam.task01.logic;
 
 import com.epam.task01.entities.Array;
 
+import java.util.function.Predicate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayLogic {
@@ -32,6 +34,19 @@ public class ArrayLogic {
             return min;
         }
         return 0;
+    }
+
+    public Array replaceElement(Array array, Predicate<Integer> condition, Integer newElement) {
+        List<Integer> newArray = new ArrayList<Integer>();
+        List<Integer> elements = array.getElements();
+        for (Integer currentElement : elements) {
+            if(condition.test(currentElement)) {
+                newArray.add(newElement);
+            } else {
+                newArray.add(currentElement);
+            }
+        }
+        return new Array(newArray);
     }
 
     public int findSum(Array array) {

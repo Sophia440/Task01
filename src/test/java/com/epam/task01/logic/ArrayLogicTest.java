@@ -4,6 +4,8 @@ import com.epam.task01.entities.Array;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.function.Predicate;
+
 public class ArrayLogicTest {
 
     private ArrayLogic arrayLogic = new ArrayLogic();
@@ -85,6 +87,38 @@ public class ArrayLogicTest {
 
         //then
         Assert.assertEquals(0, actual);
+
+    }
+
+    @Test
+    public void testReplaceElementShouldSucceed() {
+        //given
+        Array array = new Array(1, 2, 3, 4);
+        Predicate<Integer> condition = y -> (y % 2 == 1);
+        Integer newElement = 0;
+
+        //when
+        Array actual = arrayLogic.replaceElement(array, condition, newElement);
+        Array expected = new Array(0, 2, 0, 4);
+
+        //then
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testReplaceElementShouldFail() {
+        //given
+        Array array = new Array(3, 4, 5, 6);
+        Predicate<Integer> condition = y -> (y < 5);
+        Integer newElement = 5;
+
+        //when
+        Array actual = arrayLogic.replaceElement(array, condition, newElement);
+        Array expected = new Array(5, 5, 5, 5);
+
+        //then
+        Assert.assertEquals(expected, actual);
 
     }
 
