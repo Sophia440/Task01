@@ -1,4 +1,4 @@
-package com.epam.task01;
+package com.epam.task01.logic;
 
 import com.epam.task01.data.DataException;
 import com.epam.task01.data.DataReader;
