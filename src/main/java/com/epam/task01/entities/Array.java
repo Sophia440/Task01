@@ -7,11 +7,11 @@ public class Array {
     private final List<Integer> elements;
 
     public Array() {
-        this.elements = new ArrayList<Integer>();
+        this.elements = new ArrayList<>();
     }
 
     public Array(Integer... elements) {
-        this.elements = new ArrayList<Integer>();
+        this.elements = new ArrayList<>();
         this.elements.addAll(Arrays.asList(elements));
     }
 
@@ -21,6 +21,10 @@ public class Array {
 
     public List<Integer> getElements() {
         return elements;
+    }
+
+    public void addElement(Integer element) {
+        this.elements.add(element);
     }
 
     @Override
