@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class ArrayParserTest {
 
-    private final static ArrayParser parser = new ArrayParser();
+    private ArrayParser parser = new ArrayParser();
 
     @Test
     public void testParseShouldSucceedWithNegativeIntegers() {

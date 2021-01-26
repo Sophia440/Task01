@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class ArrayValidatorTest {
 
-    private final static ArrayValidator validator = new ArrayValidator();
+    private ArrayValidator validator = new ArrayValidator();
 
     @Test
     public void testValidateShouldSucceedWithNegativeIntegers() {

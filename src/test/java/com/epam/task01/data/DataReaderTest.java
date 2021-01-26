@@ -9,7 +9,7 @@ import java.util.List;
 public class DataReaderTest {
 
     private final static String PATH_TO_INPUT_FILE = "./src/test/resources/input_for_reader_test.txt";
-    private final static DataReader reader = new DataReader();
+    private DataReader reader = new DataReader();
 
     @Test
     public void testReadDataShouldSucceedWithProvidedPath() throws DataException {
